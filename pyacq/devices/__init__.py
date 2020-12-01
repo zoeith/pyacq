@@ -12,3 +12,6 @@ from .eeg_openBCI import OpenBCI
 from .ni_daqmx import NIDAQmx
 from .blackrock import Blackrock
 from .openephys_gui_relay import OpenEphysGUIRelay
+from .harvester_cam import HarvesterCam
+from .openephys_gui_relay import OpenEphysGUIRelay
+from .software_timer import Timer
