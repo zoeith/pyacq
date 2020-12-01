@@ -55,18 +55,13 @@ class Timer(Node):
         for the input and output datastream to act as a delay or
         on demand timer for that data stream.
         """
-        self.datastream=None
-        if ((self.streamtype is None) and (self.dtype is None) and
-            (self.shape is None) and (self.protocol is None)):
+        self.datastream=datastream
+        if self.datastream is None:
             self.metronome = True
         else:
             self.metronome = False
-            datastream = dict(streamtype=self.streamtype,
-                                dtype=np.uint8,
-                                shape=self.shape)
-
-            Timer._input_specs['data']=datastream
-            Timer._output_specs['data']=datastream
+            Timer._input_specs['data']=self.datastream
+            Timer._output_specs['data']=self.datastream
 
 
         Node.__init__(self, **kargs)
